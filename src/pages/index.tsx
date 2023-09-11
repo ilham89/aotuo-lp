@@ -119,7 +119,7 @@ const Home = () => {
           <Box key={reset}>
             <Slider {...settings}>
               {motor.map((item) => (
-                <Stack spacing={4}>
+                <Stack spacing={4} key={item.title}>
                   <Box
                     height={{
                       base: "250px",

@@ -26,6 +26,8 @@ const Page = React.forwardRef<Ref, PageInterfaceProps>(
   }
 );
 
+Page.displayName = "Page";
+
 const ProdukGuide = () => {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 

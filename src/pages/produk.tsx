@@ -138,7 +138,7 @@ const Produk = () => {
           />
           <HStack spacing={4} justifyContent="center">
             {colors.map((color) => (
-              <Box h={8} w={8} borderRadius="full" bg={color} />
+              <Box h={8} w={8} borderRadius="full" bg={color} key={color} />
             ))}
           </HStack>
           <Box
@@ -147,7 +147,7 @@ const Produk = () => {
             alignItems="center"
           >
             {specs.map((spec) => (
-              <Stack>
+              <Stack key={spec.title}>
                 <Text color="#646668" fontWeight="medium">
                   {spec.title}
                 </Text>
@@ -211,7 +211,7 @@ const Produk = () => {
             </Text>
             <Grid templateColumns="repeat(3, 1fr)" gap={6}>
               {specDetail.map((detail) => (
-                <HStack spacing={3}>
+                <HStack spacing={3} key={detail.title}>
                   {detail.icon}
                   <Stack spacing={2}>
                     <Text color="#646668" fontWeight="normal">
