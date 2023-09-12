@@ -16,7 +16,6 @@ import Logo from "@/assets/logo.png";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import { ChevronDownIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import Link from "next/link";
 
 const Header = () => {
   const menus = [
