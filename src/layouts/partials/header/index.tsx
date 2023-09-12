@@ -111,7 +111,12 @@ const Header = () => {
           <Box>
             <HStack spacing={10}>
               {menus.map((menu) => (
-                <HStack key={menu.title} spacing={2} cursor="pointer">
+                <HStack
+                  key={menu.title}
+                  spacing={2}
+                  cursor="pointer"
+                  onClick={() => router.push(menu.to)}
+                >
                   <Text color="red.500" fontWeight="bold">
                     {menu.title}
                   </Text>
@@ -146,7 +151,12 @@ const Header = () => {
           >
             <Stack spacing={4}>
               {menus.map((menu) => (
-                <HStack key={menu.title} spacing={2} cursor="pointer">
+                <HStack
+                  key={menu.title}
+                  spacing={2}
+                  cursor="pointer"
+                  onClick={() => router.push(menu.to)}
+                >
                   <Text color="red.500" fontWeight="bold">
                     {menu.title}
                   </Text>
