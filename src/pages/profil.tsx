@@ -1,15 +1,33 @@
 import { ObengIcon, OfficeIcon, YoutubeIcon } from "@/assets/icons/sosmed";
 import BaseLayout from "@/layouts/base";
-import { Box, HStack, Stack, Text } from "@chakra-ui/react";
+import { Box, HStack, Stack, Text, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image";
 import { ReactElement } from "react";
 
 const Profil = () => {
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+
   return (
     <Box>
       <Box maxW={1200} w="full" mx="auto" display="flex" alignItems="center">
         <Box>
-          <Box h="calc(100vh - 88px)" display="flex" alignItems="center" px={4}>
+          <Box
+            h={{
+              base: "unset",
+              md: "calc(100vh - 88px)",
+            }}
+            display="flex"
+            alignItems={{
+              base: "flex-start",
+              md: "center",
+            }}
+            flexDirection={{
+              base: "column-reverse",
+              md: "row",
+            }}
+            px={4}
+            gap={8}
+          >
             <Stack spacing={4} maxW="500px" w="full">
               <Text
                 color="black"
@@ -41,6 +59,12 @@ const Profil = () => {
                 </Text>
               </Box>
             </Stack>
+            <Image
+              src="https://res.cloudinary.com/ds73yosji/image/upload/v1694440470/aotuo/Frame_84_1_lvdqqt.png"
+              alt="profil"
+              width={550}
+              height={300}
+            />
           </Box>
           <Box
             display="flex"
@@ -55,6 +79,10 @@ const Profil = () => {
               base: "column",
               md: "row",
             }}
+            mt={{
+              base: 10,
+              md: 0,
+            }}
           >
             <Image
               src="https://res.cloudinary.com/ds73yosji/image/upload/v1694360450/aotuo/image_20_gnxqbr.png"
@@ -62,7 +90,8 @@ const Profil = () => {
               width={450}
               height={450}
               style={{
-                width: "40%",
+                width: isLargerThan768 ? "40%" : "100%",
+                height: isLargerThan768 ? "unset" : 300,
               }}
             />
             <Stack
@@ -75,7 +104,7 @@ const Profil = () => {
               <Text
                 color="black"
                 fontSize={{
-                  base: "xl",
+                  base: "md",
                   md: "2xl",
                 }}
               >
@@ -87,7 +116,7 @@ const Profil = () => {
               <Text
                 color="black"
                 fontSize={{
-                  base: "xl",
+                  base: "md",
                   md: "2xl",
                 }}
               >
@@ -106,7 +135,7 @@ const Profil = () => {
             }}
             justifyContent="space-between"
             gap={10}
-            mt={10}
+            my={10}
             px={4}
             flexDirection={{
               base: "column",
@@ -123,7 +152,7 @@ const Profil = () => {
               <Text
                 color="black"
                 fontSize={{
-                  base: "xl",
+                  base: "md",
                   md: "2xl",
                 }}
               >
@@ -134,7 +163,7 @@ const Profil = () => {
               <Text
                 color="black"
                 fontSize={{
-                  base: "xl",
+                  base: "md",
                   md: "2xl",
                 }}
               >
@@ -149,7 +178,8 @@ const Profil = () => {
               width={450}
               height={450}
               style={{
-                width: "60%",
+                width: isLargerThan768 ? "60%" : "100%",
+                height: isLargerThan768 ? "unset" : 300,
               }}
             />
           </Box>

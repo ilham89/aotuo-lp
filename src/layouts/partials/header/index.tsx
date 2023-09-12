@@ -15,11 +15,53 @@ import Image from "next/image";
 import Logo from "@/assets/logo.png";
 import { useRouter } from "next/router";
 import { useRef } from "react";
-import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 
 const Header = () => {
-  const menus = ["BERANDA", "PRODUK", "TENTANG KAMI", "FAQ"];
+  const menus = [
+    {
+      title: "BERANDA",
+      submenus: [],
+      to: "/",
+    },
+    {
+      title: "PRODUK",
+      submenus: [
+        {
+          title: "STARLIGHT",
+          to: "/produk",
+        },
+        {
+          title: "JP25",
+          to: "/produk",
+        },
+        {
+          title: "ROSA21",
+          to: "/produk",
+        },
+        {
+          title: "VISION",
+          to: "/produk",
+        },
+        {
+          title: "VISION PRO",
+          to: "/produk",
+        },
+      ],
+      to: "/produk",
+    },
+    {
+      title: "TENTANG KAMI",
+      submenus: [],
+      to: "/hubungi-kami",
+    },
+    {
+      title: "FAQ",
+      submenus: [],
+      to: "/faq",
+    },
+  ];
 
   const router = useRouter();
   const { isOpen, onToggle, onClose } = useDisclosure();
@@ -42,7 +84,16 @@ const Header = () => {
         maxW={1200}
         mx="auto"
       >
-        <Image src={Logo} alt="logo" width={124} height={36} />
+        <Image
+          src={Logo}
+          alt="logo"
+          width={124}
+          height={36}
+          onClick={() => router.push("/")}
+          style={{
+            cursor: "pointer",
+          }}
+        />
         <Hide above="md">
           <IconButton
             aria-label="Hamburger menu"
@@ -61,11 +112,21 @@ const Header = () => {
           <Box>
             <HStack spacing={10}>
               {menus.map((menu) => (
-                <Text key={menu} color="red.500" fontWeight="bold">
-                  {menu}
-                </Text>
+                <HStack key={menu.title} spacing={2} cursor="pointer">
+                  <Text color="red.500" fontWeight="bold">
+                    {menu.title}
+                  </Text>
+                  {!!menu.submenus.length && (
+                    <ChevronDownIcon fontSize={24} color="red.500" />
+                  )}
+                </HStack>
               ))}
-              <Button colorScheme="red">GABUNG MITRA</Button>
+              <Button
+                colorScheme="red"
+                onClick={() => router.push("/gabung-mitra")}
+              >
+                GABUNG MITRA
+              </Button>
             </HStack>
           </Box>
         </Show>
@@ -86,13 +147,21 @@ const Header = () => {
           >
             <Stack spacing={4}>
               {menus.map((menu) => (
-                <Link href="/produk" passHref key={menu}>
-                  <Text key={menu} color="red.500" fontWeight="bold">
-                    {menu}
+                <HStack key={menu.title} spacing={2} cursor="pointer">
+                  <Text color="red.500" fontWeight="bold">
+                    {menu.title}
                   </Text>
-                </Link>
+                  {!!menu.submenus.length && (
+                    <ChevronDownIcon fontSize={24} color="red.500" />
+                  )}
+                </HStack>
               ))}
-              <Button colorScheme="red">GABUNG MITRA</Button>
+              <Button
+                colorScheme="red"
+                onClick={() => router.push("/gabung-mitra")}
+              >
+                GABUNG MITRA
+              </Button>
             </Stack>
           </Box>
         </Collapse>

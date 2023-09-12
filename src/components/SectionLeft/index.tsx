@@ -7,7 +7,7 @@ interface SectionLeftProps {
 }
 const SectionLeft = ({ title, description, image }: SectionLeftProps) => {
   return (
-    <Box h="444px" position="relative" bg="red.500">
+    <Box minH="444px" h="full" position="relative" bg="red.500">
       <Box
         position={{
           base: "relative",
@@ -37,9 +37,12 @@ const SectionLeft = ({ title, description, image }: SectionLeftProps) => {
         display="flex"
         alignItems="center"
         mx="auto"
-        h="full"
+        minH={{
+          base: "unset",
+          md: "444px",
+        }}
         justifyContent={{
-          base: "center",
+          base: "flex-start",
           md: "flex-end",
         }}
         sx={{
@@ -50,12 +53,12 @@ const SectionLeft = ({ title, description, image }: SectionLeftProps) => {
         <Box>
           <Text
             color="white"
-            fontSize={{ base: "3xl", md: "5xl" }}
+            fontSize={{ base: "2xl", md: "5xl" }}
             fontWeight="bold"
           >
             {title}
           </Text>
-          <Text color="white" fontSize={{ base: "lg", md: "2xl" }} maxW="580px">
+          <Text color="white" fontSize={{ base: "md", md: "2xl" }} maxW="580px">
             {description}
           </Text>
         </Box>

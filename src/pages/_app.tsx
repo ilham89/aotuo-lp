@@ -6,7 +6,8 @@ import { AppProps } from "next/app";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import Head from "next/head";
 
 type Props = AppProps & {
   Component: Page;
@@ -26,9 +27,21 @@ function MyApp({ Component, pageProps }: Props) {
   }
 
   return (
-    <ChakraProvider theme={AotuoUI}>
-      {getLayout(<Component {...pageProps} />)}
-    </ChakraProvider>
+    <React.Fragment>
+      <Head>
+        <title>AOTUO</title>
+        <meta
+          name="description"
+          content="PT TRANS BORNEO TOURS ADALAH SEBAGAI PERUSAHAAN AGEN TUNGGAL PEMEGANG MEREK UNTUK MOTOR LISTRIK AOTUO DI INDONESIA"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/aotuo.svg" />
+      </Head>
+
+      <ChakraProvider theme={AotuoUI}>
+        {getLayout(<Component {...pageProps} />)}
+      </ChakraProvider>
+    </React.Fragment>
   );
 }
 

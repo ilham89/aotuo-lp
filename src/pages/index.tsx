@@ -155,6 +155,13 @@ const Home = () => {
           </Box>
         </Stack>
       </Box>
+      <Box
+        bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694485978/aotuo/Frame_85_1_1_1_dgact6.png"
+        bgSize="cover"
+        bgRepeat="no-repeat"
+        bgPos="center"
+        h={900}
+      />
     </Box>
   );
 };

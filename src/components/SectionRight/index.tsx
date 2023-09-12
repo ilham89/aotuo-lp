@@ -16,7 +16,10 @@ const SectionRight = ({ title, description, image }: SectionRightProps) => {
         display="flex"
         alignItems="center"
         mx="auto"
-        h="full"
+        minH={{
+          base: "unset",
+          md: "444px",
+        }}
         w="full"
         position="relative"
         zIndex={4}
@@ -24,14 +27,14 @@ const SectionRight = ({ title, description, image }: SectionRightProps) => {
         <Box>
           <Text
             color="red.500"
-            fontSize={{ base: "3xl", md: "5xl" }}
+            fontSize={{ base: "2xl", md: "5xl" }}
             fontWeight="bold"
           >
             {title}
           </Text>
           <Text
             color="red.500"
-            fontSize={{ base: "lg", md: "2xl" }}
+            fontSize={{ base: "md", md: "2xl" }}
             maxW="580px"
           >
             {description}
@@ -49,7 +52,7 @@ const SectionRight = ({ title, description, image }: SectionRightProps) => {
         bgRepeat="no-repeat"
         bgSize="cover"
         h={{
-          base: "260px",
+          base: "300px",
           md: "444px",
         }}
         maxW="500px"

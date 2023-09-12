@@ -21,5 +21,9 @@ export const styles = {
       // borderRight: "2px solid #212427",
       width: "100%",
     },
+    ".slick-prev:before, .slick-next:before": {
+      color: "red.500",
+      fontSize: "32px",
+    },
   }),
 };

@@ -1,34 +1,88 @@
 import { Box, Grid, Hide, Show, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import LogoWhite from "@/assets/logo-white.png";
+import { useRouter } from "next/router";
 
 const Footer = () => {
   const menus = [
     {
       title: "Pintasan",
       submenus: [
-        "Beranda",
-        "Profil Perusahaan",
-        "Hubungi Kami",
-        "Guideline Produk",
-        "Gabung Mitra",
+        {
+          title: "Beranda",
+          to: "/",
+        },
+        {
+          title: "Profil Perusahaan",
+          to: "/profil",
+        },
+        {
+          title: "Hubungi Kami",
+          to: "/hubungi-kami",
+        },
+        {
+          title: "Guideline Produk",
+          to: "/produk-guide",
+        },
+        {
+          title: "Gabung Mitra",
+          to: "/gabung-mitra",
+        },
       ],
     },
     {
       title: "Produk",
-      submenus: ["Starlight", "JP25", "Rosa21", "Vision", "Vision Pro"],
+      submenus: [
+        {
+          title: "Starlight",
+          to: "/produk",
+        },
+        {
+          title: "JP25",
+          to: "/produk",
+        },
+        {
+          title: "Rosa21",
+          to: "/produk",
+        },
+        {
+          title: "Vision",
+          to: "/produk",
+        },
+        {
+          title: "Vision Pro",
+          to: "/produk",
+        },
+      ],
     },
     {
       title: "Hubungi Kami",
       submenus: [
-        "Beranda",
-        "Profil Perusahaan",
-        "Hubungi Kami",
-        "Guideline Produk",
-        "Gabung Mitra",
+        {
+          title: "Beranda",
+          to: "/",
+        },
+        {
+          title: "Profil Perusahaan",
+          to: "/profil",
+        },
+        {
+          title: "Hubungi Kami",
+          to: "/hubungi-kami",
+        },
+        {
+          title: "Guideline Produk",
+          to: "/produk-guide",
+        },
+        {
+          title: "Gabung Mitra",
+          to: "/gabung-mitra",
+        },
       ],
     },
   ];
+
+  const router = useRouter();
   return (
     <Box bg="red.500" w="full" pos="relative" minH="450px">
       <Box
@@ -76,6 +130,8 @@ const Footer = () => {
           gap={6}
           maxW="600px"
           w="full"
+          pos="relative"
+          zIndex={2}
         >
           {menus.map((menu) => (
             <Box key={menu.title}>
@@ -85,8 +141,15 @@ const Footer = () => {
                 </Text>
                 <Stack spacing={3}>
                   {menu.submenus.map((sub, i) => (
-                    <Text key={i} color="#FCE7E7">
-                      {sub}
+                    <Text
+                      key={i}
+                      color="#FCE7E7"
+                      onClick={() => {
+                        router.push(sub.to);
+                        console.log("klikkk");
+                      }}
+                    >
+                      {sub.title}
                     </Text>
                   ))}
                 </Stack>
@@ -96,7 +159,8 @@ const Footer = () => {
         </Grid>
         <Hide above="md">
           <Text color="white">
-            © 2023 PT. Trans Borneo Tours. All rights reserved
+            © {new Date().getFullYear()} PT. Trans Borneo Tours. All rights
+            reserved
           </Text>
         </Hide>
       </Box>
@@ -114,6 +178,7 @@ const Footer = () => {
         sx={{
           margin: "auto 0px",
         }}
+        zIndex={1}
       />
     </Box>
   );
