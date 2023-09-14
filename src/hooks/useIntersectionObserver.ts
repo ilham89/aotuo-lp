@@ -34,7 +34,7 @@ export function useIntersectionObserver(
 
     return () => observer.disconnect();
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [
     elementRef?.current,
     JSON.stringify(threshold),

@@ -182,6 +182,7 @@ const Header = () => {
                             e.stopPropagation();
                             router.push(sub.to);
                           }}
+                          key={sub.title}
                         >
                           {sub.title}
                         </Text>
