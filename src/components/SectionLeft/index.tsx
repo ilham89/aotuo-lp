@@ -1,67 +1,88 @@
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Box, BoxProps, Text } from "@chakra-ui/react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useRef } from "react";
 
 interface SectionLeftProps {
   title: string;
   description: string;
-  image: string;
+  image: string | StaticImport;
 }
 const SectionLeft = ({ title, description, image }: SectionLeftProps) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
+
   return (
-    <Box minH="444px" h="full" position="relative" bg="red.500">
+    <Box
+      h="full"
+      bg="red.500"
+      display="flex"
+      justifyContent="space-between"
+      gap={4}
+      ref={ref}
+      maxW={1440}
+      w="full"
+      mx="auto"
+    >
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0, x: -50 }} // Animasi awal dari kiri
+          animate={{ opacity: 1, x: 0 }} // Animasi selama animasi berlangsung
+          transition={{ duration: 2 }}
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <Image
+            width={100}
+            height={100}
+            alt={title}
+            src={image}
+            style={{
+              width: "100%",
+              objectFit: "cover",
+              objectPosition: "bottom",
+            }}
+          />
+        </motion.div>
+      )}
+
       <Box
-        position={{
-          base: "relative",
-          md: "absolute",
-        }}
-        bottom={0}
-        left={0}
-        bgImage={image}
-        bgRepeat="no-repeat"
-        bgSize="cover"
-        h={{
-          base: "260px",
-          md: "444px",
-        }}
-        maxW="500px"
+        px={{ base: 2, md: 4 }}
+        py={{ base: 2, md: 6 }}
         w="full"
-        bgPos="center"
-        sx={{
-          zIndex: 1,
-        }}
-      />
-      <Box
-        px={4}
-        py={6}
-        w="full"
-        maxW={1200}
+        maxW={1440}
         display="flex"
         alignItems="center"
-        mx="auto"
-        minH={{
-          base: "unset",
-          md: "444px",
-        }}
-        justifyContent={{
-          base: "flex-start",
-          md: "flex-end",
-        }}
-        sx={{
-          zIndex: 999,
-        }}
-        position="relative"
+        justifyContent="flex-end"
       >
-        <Box>
-          <Text
-            color="white"
-            fontSize={{ base: "2xl", md: "5xl" }}
-            fontWeight="bold"
+        {isVisible && (
+          <motion.div
+            initial={{ opacity: 0, x: 50 }} // Animasi awal dari kiri
+            animate={{ opacity: 1, x: 0 }} // Animasi selama animasi berlangsung
+            transition={{ duration: 3 }}
           >
-            {title}
-          </Text>
-          <Text color="white" fontSize={{ base: "md", md: "2xl" }} maxW="580px">
-            {description}
-          </Text>
-        </Box>
+            <Text
+              color="white"
+              fontSize={{ base: "lg", md: "3xl", lg: "5xl" }}
+              fontWeight="bold"
+            >
+              {title}
+            </Text>
+            <Text
+              color="white"
+              fontSize={{ base: "xs", md: "2xl" }}
+              fontWeight="medium"
+              maxW="580px"
+            >
+              {description}
+            </Text>
+          </motion.div>
+        )}
       </Box>
     </Box>
   );

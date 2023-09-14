@@ -1,9 +1,21 @@
-import { Box, Grid, Hide, Show, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  HStack,
+  Hide,
+  Show,
+  Stack,
+  Text,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import LogoWhite from "@/assets/logo-white.png";
 import { useRouter } from "next/router";
+import { IgWhite, MailWhite, TelpWhite, WaWhite } from "@/assets/icons/sosmed";
 
 const Footer = () => {
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+
   const menus = [
     {
       title: "Pintasan",
@@ -55,28 +67,31 @@ const Footer = () => {
         },
       ],
     },
+  ];
+
+  const menusResponsive = [
     {
       title: "Hubungi Kami",
       submenus: [
         {
-          title: "Beranda",
-          to: "/",
+          icon: <IgWhite />,
+          title: "@aotuo.id",
+          to: "https://www.instagram.com/aotuo.id/",
         },
         {
-          title: "Profil Perusahaan",
-          to: "/profil",
+          icon: <WaWhite />,
+          title: "+62811545793",
+          to: "https://wa.me/62811545793",
         },
         {
-          title: "Hubungi Kami",
-          to: "/hubungi-kami",
+          icon: <TelpWhite />,
+          title: "62811545793",
+          to: "tel:62811545793",
         },
         {
-          title: "Guideline Produk",
-          to: "/produk-guide",
-        },
-        {
-          title: "Gabung Mitra",
-          to: "/gabung-mitra",
+          icon: <MailWhite />,
+          title: "motorlistrikaotuo@gmail.com",
+          to: "mailto:motorlistrikaotuo@gmail.com",
         },
       ],
     },
@@ -84,7 +99,14 @@ const Footer = () => {
 
   const router = useRouter();
   return (
-    <Box bg="red.500" w="full" pos="relative" minH="450px">
+    <Box
+      bg="red.500"
+      w="full"
+      pos="relative"
+      minH="450px"
+      maxW={1440}
+      mx="auto"
+    >
       <Box
         justifyContent="space-between"
         display="flex"
@@ -133,7 +155,34 @@ const Footer = () => {
           pos="relative"
           zIndex={2}
         >
-          {menus.map((menu) => (
+          {isLargerThan768 && (
+            <>
+              {menus.map((menu) => (
+                <Box key={menu.title}>
+                  <Stack spacing={4}>
+                    <Text color="white" fontSize="xl" fontWeight="bold">
+                      {menu.title}
+                    </Text>
+                    <Stack spacing={3}>
+                      {menu.submenus.map((sub, i) => (
+                        <Text
+                          cursor="pointer"
+                          key={i}
+                          color="#FCE7E7"
+                          onClick={() => {
+                            router.push(sub.to);
+                          }}
+                        >
+                          {sub.title}
+                        </Text>
+                      ))}
+                    </Stack>
+                  </Stack>
+                </Box>
+              ))}
+            </>
+          )}
+          {menusResponsive.map((menu) => (
             <Box key={menu.title}>
               <Stack spacing={4}>
                 <Text color="white" fontSize="xl" fontWeight="bold">
@@ -141,16 +190,19 @@ const Footer = () => {
                 </Text>
                 <Stack spacing={3}>
                   {menu.submenus.map((sub, i) => (
-                    <Text
-                      key={i}
-                      color="#FCE7E7"
-                      onClick={() => {
-                        router.push(sub.to);
-                        console.log("klikkk");
-                      }}
-                    >
-                      {sub.title}
-                    </Text>
+                    <HStack spacing={2} key={i}>
+                      {sub.icon}
+                      <a
+                        style={{
+                          color: "#FCE7E7",
+                        }}
+                        href={sub.to}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {sub.title}
+                      </a>
+                    </HStack>
                   ))}
                 </Stack>
               </Stack>

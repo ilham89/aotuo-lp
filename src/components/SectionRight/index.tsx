@@ -1,4 +1,8 @@
 import { Box, Text } from "@chakra-ui/react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 interface SectionRightProps {
   title: string;
@@ -7,58 +11,77 @@ interface SectionRightProps {
 }
 
 const SectionRight = ({ title, description, image }: SectionRightProps) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
+
   return (
-    <Box minH="444px" position="relative">
+    <Box
+      h="full"
+      bg="white"
+      display="flex"
+      justifyContent="space-between"
+      gap={4}
+      ref={ref}
+      maxW={1440}
+      w="full"
+      mx="auto"
+    >
       <Box
-        px={4}
-        py={6}
-        maxW={1200}
+        px={{ base: 2, md: 4 }}
+        py={{ base: 2, md: 6 }}
+        w="full"
+        maxW={1440}
         display="flex"
         alignItems="center"
-        mx="auto"
-        minH={{
-          base: "unset",
-          md: "444px",
-        }}
-        w="full"
-        position="relative"
-        zIndex={4}
       >
-        <Box>
-          <Text
-            color="red.500"
-            fontSize={{ base: "2xl", md: "5xl" }}
-            fontWeight="bold"
+        {isVisible && (
+          <motion.div
+            initial={{ opacity: 0, x: -50 }} // Animasi awal dari kiri
+            animate={{ opacity: 1, x: 0 }} // Animasi selama animasi berlangsung
+            transition={{ duration: 3 }}
           >
-            {title}
-          </Text>
-          <Text
-            color="red.500"
-            fontSize={{ base: "md", md: "2xl" }}
-            maxW="580px"
-          >
-            {description}
-          </Text>
-        </Box>
+            <Text
+              color="red.500"
+              fontSize={{ base: "lg", md: "3xl", lg: "5xl" }}
+              fontWeight="bold"
+            >
+              {title}
+            </Text>
+            <Text
+              color="red.500"
+              fontSize={{ base: "xs", md: "2xl" }}
+              maxW="580px"
+              fontWeight="medium"
+            >
+              {description}
+            </Text>
+          </motion.div>
+        )}
       </Box>
-      <Box
-        position={{
-          base: "relative",
-          md: "absolute",
-        }}
-        bottom={0}
-        right={0}
-        bgImage={image}
-        bgRepeat="no-repeat"
-        bgSize="cover"
-        h={{
-          base: "300px",
-          md: "444px",
-        }}
-        maxW="500px"
-        w="full"
-        zIndex={1}
-      />
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0, x: 50 }} // Animasi awal dari kanan
+          animate={{ opacity: 1, x: 0 }} // Animasi selama animasi berlangsung
+          transition={{ duration: 2 }}
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <Image
+            width={100}
+            height={100}
+            alt={title}
+            src={image}
+            style={{
+              width: "100%",
+              objectFit: "contain",
+              objectPosition: "bottom",
+            }}
+          />
+        </motion.div>
+      )}
     </Box>
   );
 };

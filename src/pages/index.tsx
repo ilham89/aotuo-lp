@@ -1,14 +1,25 @@
 import SectionLeft from "@/components/SectionLeft";
 import SectionRight from "@/components/SectionRight";
 import BaseLayout from "@/layouts/base";
-import { Box, HStack, Stack, Text } from "@chakra-ui/react";
+import { Box, Stack, Text, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image";
-import { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
+import HeroImage from "@/assets/hero-image.webp";
+import SambutMasaDepan from "@/assets/sambut-masa-depan.webp";
+import AotuoLogo from "@/assets/logo-aotuo.png";
+import RosaLED from "@/assets/ROSA21-Lampu-LED.webp";
+import { motion } from "framer-motion";
 
 import Slider, { Settings } from "react-slick";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const Home = () => {
   const [reset, setReset] = useState(1);
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -30,13 +41,15 @@ const Home = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2.2,
+          slidesToShow: 2,
+          centerMode: true,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1.2,
+          slidesToShow: 1,
+          centerMode: true,
         },
       },
     ],
@@ -71,24 +84,24 @@ const Home = () => {
   ];
   return (
     <Box>
-      <Box
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat"
-        backgroundSize="cover"
-        backgroundImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694010350/aotuo/finalheroimage1_1_toqkvl.png"
-        height={{
-          base: "210px",
-          sm: "calc(100vh - 88px)",
-        }}
-        width="full"
-      />
+      <Box h="full" width="100%" maxW={1440} mx="auto">
+        <Image
+          width={500}
+          height={500}
+          alt="hero image"
+          src={HeroImage}
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        />
+      </Box>
       <SectionLeft
         title="Desain Futuristik"
         description=" Desain futuristik dari Motor Listrik Aotuo akan membuat banyak
               kalangan terpesona"
-        image="https://res.cloudinary.com/ds73yosji/image/upload/v1694011367/aotuo/Frame_6_2_1_tdhjar.png"
+        image={RosaLED}
       />
-
       <SectionRight
         title="Speedometer Digital"
         description="Rasakan sensasi berkendara baru dengan speedometer digital yang
@@ -103,7 +116,7 @@ const Home = () => {
         image="https://res.cloudinary.com/ds73yosji/image/upload/v1694012903/aotuo/Frame_19_1_nbs0kq.png"
       />
 
-      <Box py={14} maxW={1300} ml="auto">
+      <Box py={14} maxW={1200} mx="auto">
         <Stack spacing={6}>
           <Text
             color="red.500"
@@ -133,8 +146,8 @@ const Home = () => {
                     <Image
                       src={item.image}
                       alt={item.title}
-                      width={300}
-                      height={300}
+                      width={isLargerThan768 ? 300 : 250}
+                      height={isLargerThan768 ? 300 : 250}
                     />
                   </Box>
                   <Text
@@ -155,13 +168,71 @@ const Home = () => {
           </Box>
         </Stack>
       </Box>
-      <Box
-        bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694485978/aotuo/Frame_85_1_1_1_dgact6.png"
-        bgSize="cover"
-        bgRepeat="no-repeat"
-        bgPos="center"
-        h={900}
-      />
+      <Box position="relative" maxW={1440} w="full" mx="auto">
+        <Image
+          src={SambutMasaDepan}
+          alt="sambut masa depan"
+          width={300}
+          height={300}
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        />
+        <Box
+          pos="absolute"
+          top={{
+            base: 8,
+            md: 20,
+          }}
+          left={0}
+          right={0}
+          margin="0 auto"
+          px={6}
+          ref={ref}
+        >
+          <Image
+            width={isLargerThan768 ? 100 : 60}
+            height={isLargerThan768 ? 100 : 60}
+            alt="logo aotuo"
+            src={AotuoLogo}
+            style={{
+              margin: "0px auto",
+              marginBottom: 12,
+            }}
+          />
+          {isVisible && (
+            <motion.div
+              initial={{ opacity: 0, y: -50 }} // Animasi awal dari kiri
+              animate={{ opacity: 1, y: 0 }} // Animasi selama animasi berlangsung
+              transition={{ duration: 1, ease: "backInOut" }}
+            >
+              <Text
+                color="red.500"
+                fontWeight="bold"
+                fontSize={{
+                  base: "lg",
+                  md: "4xl",
+                }}
+                textAlign="center"
+              >
+                Sambut Masa Depan
+              </Text>
+              <Text
+                color="red.500"
+                fontWeight="bold"
+                fontSize={{
+                  base: "lg",
+                  md: "4xl",
+                }}
+                textAlign="center"
+              >
+                Dengan Kendaraan Ramah Lingkungan
+              </Text>
+            </motion.div>
+          )}
+        </Box>
+      </Box>
     </Box>
   );
 };

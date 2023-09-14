@@ -14,10 +14,16 @@ import {
 import Image from "next/image";
 import Logo from "@/assets/logo.png";
 import { useRouter } from "next/router";
-import { useRef } from "react";
-import { ChevronDownIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { useRef, useState } from "react";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  CloseIcon,
+  HamburgerIcon,
+} from "@chakra-ui/icons";
 
 const Header = () => {
+  const [selectedIndex, setSelectedIndex] = useState(-1);
   const menus = [
     {
       title: "BERANDA",
@@ -52,8 +58,21 @@ const Header = () => {
     },
     {
       title: "TENTANG KAMI",
-      submenus: [],
-      to: "/hubungi-kami",
+      submenus: [
+        {
+          title: "Profil Perusahaan",
+          to: "/profil",
+        },
+        {
+          title: "Hubungi Kami",
+          to: "/hubungi-kami",
+        },
+        {
+          title: "Guideline Produk",
+          to: "/produk-guide",
+        },
+      ],
+      to: "/",
     },
     {
       title: "FAQ",
@@ -73,15 +92,15 @@ const Header = () => {
   });
 
   return (
-    <Box w="full" ref={ref}>
+    <Box w="full" ref={ref} pos="sticky" top={0} bg="white" zIndex={99}>
       <Box
         justifyContent="space-between"
         alignItems="center"
         display="flex"
         px={5}
-        py={6}
         maxW={1200}
         mx="auto"
+        h="80px"
       >
         <Image
           src={Logo}
@@ -108,31 +127,77 @@ const Header = () => {
           />
         </Hide>
         <Show above="md">
-          <Box>
-            <HStack spacing={10}>
-              {menus.map((menu) => (
+          <HStack spacing={8} h="full">
+            {menus.map((menu, index) => (
+              <>
                 <HStack
+                  pos="relative"
                   key={menu.title}
+                  h="full"
+                  px={2}
                   spacing={2}
                   cursor="pointer"
-                  onClick={() => router.push(menu.to)}
+                  onClick={() => {
+                    if (menu.submenus.length > 0) {
+                      if (selectedIndex === index) {
+                        setSelectedIndex(-1);
+                      } else {
+                        setSelectedIndex(index);
+                      }
+                    } else {
+                      router.push(menu.to);
+                    }
+                  }}
+                  _hover={{
+                    background: "red.500",
+                    color: "white",
+                  }}
+                  color="red.500"
                 >
-                  <Text color="red.500" fontWeight="bold">
-                    {menu.title}
-                  </Text>
-                  {!!menu.submenus.length && (
-                    <ChevronDownIcon fontSize={24} color="red.500" />
-                  )}
+                  <Text fontWeight="bold">{menu.title}</Text>
+                  {!!menu.submenus.length && <ChevronDownIcon fontSize={24} />}
+
+                  <Collapse
+                    in={selectedIndex === index}
+                    style={{
+                      position: "absolute",
+                      width: "300px",
+                      bottom: selectedIndex === 1 ? -190 : -125,
+                      zIndex: "10",
+                      background: "white",
+                      borderRadius: 16,
+                      boxShadow: "0px 5px 30px 0px #B2B2B229",
+                      padding: 16,
+                      left: -75,
+                      margin: "0px auto",
+                    }}
+                  >
+                    <Stack spacing={2}>
+                      {menu.submenus.map((sub) => (
+                        <Text
+                          fontWeight="bold"
+                          color="red.500"
+                          cursor="pointer"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            router.push(sub.to);
+                          }}
+                        >
+                          {sub.title}
+                        </Text>
+                      ))}
+                    </Stack>
+                  </Collapse>
                 </HStack>
-              ))}
-              <Button
-                colorScheme="red"
-                onClick={() => router.push("/gabung-mitra")}
-              >
-                GABUNG MITRA
-              </Button>
-            </HStack>
-          </Box>
+              </>
+            ))}
+            <Button
+              colorScheme="red"
+              onClick={() => router.push("/gabung-mitra")}
+            >
+              GABUNG MITRA
+            </Button>
+          </HStack>
         </Show>
       </Box>
       <Hide above="md">
@@ -149,21 +214,54 @@ const Header = () => {
             borderTop="1px solid"
             borderColor="gray.200"
           >
-            <Stack spacing={4}>
-              {menus.map((menu) => (
-                <HStack
-                  key={menu.title}
-                  spacing={2}
-                  cursor="pointer"
-                  onClick={() => router.push(menu.to)}
-                >
-                  <Text color="red.500" fontWeight="bold">
-                    {menu.title}
-                  </Text>
-                  {!!menu.submenus.length && (
-                    <ChevronDownIcon fontSize={24} color="red.500" />
-                  )}
-                </HStack>
+            <Stack spacing={5}>
+              {menus.map((menu, index) => (
+                <>
+                  <HStack
+                    key={menu.title}
+                    spacing={2}
+                    cursor="pointer"
+                    onClick={() => {
+                      if (menu.submenus.length > 0) {
+                        if (selectedIndex === index) {
+                          setSelectedIndex(-1);
+                        } else {
+                          setSelectedIndex(index);
+                        }
+                      } else {
+                        router.push(menu.to);
+                      }
+                    }}
+                  >
+                    <Text color="red.500" fontWeight="bold">
+                      {menu.title}
+                    </Text>
+                    {!!menu.submenus.length && (
+                      <>
+                        {selectedIndex === index ? (
+                          <ChevronUpIcon fontSize={24} color="red.500" />
+                        ) : (
+                          <ChevronDownIcon fontSize={24} color="red.500" />
+                        )}
+                      </>
+                    )}
+                  </HStack>
+                  <Collapse in={selectedIndex === index}>
+                    <Stack spacing={2}>
+                      {menu.submenus.map((sub) => (
+                        <Text
+                          cursor="pointer"
+                          key={sub.title}
+                          color="red.500"
+                          fontWeight="bold"
+                          onClick={() => router.push(sub.to)}
+                        >
+                          {sub.title}
+                        </Text>
+                      ))}
+                    </Stack>
+                  </Collapse>
+                </>
               ))}
               <Button
                 colorScheme="red"
