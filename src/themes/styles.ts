@@ -3,6 +3,7 @@ export const styles = {
     body: {
       minHeight: "100vh",
       color: "black",
+      fontFamily: "Lato",
     },
     ".slick-list": {
       padding: "0px 16px",
