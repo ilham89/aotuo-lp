@@ -159,6 +159,10 @@ const Home = () => {
                     }}
                     mt={5}
                     textAlign="center"
+                    w={{
+                      base: "250px",
+                      md: "300px",
+                    }}
                   >
                     {item.title}
                   </Text>
