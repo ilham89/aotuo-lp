@@ -3,6 +3,8 @@ import BaseLayout from "@/layouts/base";
 import { Box, HStack, Stack, Text, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image";
 import { ReactElement } from "react";
+import Decoration1 from "@/assets/decoration1.png";
+import Decoration2 from "@/assets/decoration2.png";
 
 const Profil = () => {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
@@ -22,7 +24,7 @@ const Profil = () => {
               md: "center",
             }}
             flexDirection={{
-              base: "column-reverse",
+              base: "column",
               md: "row",
             }}
             px={4}
@@ -33,7 +35,8 @@ const Profil = () => {
                 color="black"
                 fontWeight="bold"
                 fontSize={{
-                  base: "48px",
+                  base: "32px",
+                  sm: "48px",
                   md: "56px",
                 }}
               >
@@ -138,7 +141,7 @@ const Profil = () => {
             my={10}
             px={4}
             flexDirection={{
-              base: "column",
+              base: "column-reverse",
               md: "row",
             }}
           >
@@ -185,7 +188,7 @@ const Profil = () => {
           </Box>
         </Box>
       </Box>
-      <Box h={450} bg="red.500">
+      <Box h={450} bg="red.500" pos="relative">
         <Box
           display="flex"
           alignItems="center"
@@ -215,6 +218,32 @@ const Profil = () => {
             </Text>
           </Stack>
         </Box>
+        <Image
+          src={Decoration1}
+          alt="decoration one"
+          width={150}
+          height={400}
+          style={{
+            objectFit: "contain",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            height: "100%",
+          }}
+        />
+        <Image
+          src={Decoration2}
+          alt="decoration two"
+          width={150}
+          height={400}
+          style={{
+            objectFit: "contain",
+            position: "absolute",
+            top: 0,
+            right: 0,
+            height: "100%",
+          }}
+        />
       </Box>
       <Box
         maxW={1200}

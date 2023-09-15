@@ -216,7 +216,8 @@ const Home = () => {
                 color="red.500"
                 fontWeight="bold"
                 fontSize={{
-                  base: "lg",
+                  base: "sm",
+                  sm: "lg",
                   md: "4xl",
                 }}
                 textAlign="center"
@@ -227,7 +228,8 @@ const Home = () => {
                 color="red.500"
                 fontWeight="bold"
                 fontSize={{
-                  base: "lg",
+                  base: "sm",
+                  sm: "lg",
                   md: "4xl",
                 }}
                 textAlign="center"
