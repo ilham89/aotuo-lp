@@ -19,5 +19,8 @@ export const styles = {
       color: "red.500",
       fontSize: "32px",
     },
+    ".slick-next": {
+      right: "-15px",
+    },
   }),
 };

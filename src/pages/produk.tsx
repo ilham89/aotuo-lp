@@ -671,8 +671,8 @@ const Produk = () => {
                   key={product.name}
                   src={product.image}
                   alt={product.name}
-                  width={600}
-                  height={600}
+                  width={isLargerThan768 ? 600 : 200}
+                  height={isLargerThan768 ? 600 : 200}
                   style={{
                     margin: "0px auto",
                     width: isLargerThan768 ? 600 : 200,
