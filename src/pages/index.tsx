@@ -5,6 +5,7 @@ import { Box, Stack, Text, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image";
 import { ReactElement, useEffect, useRef, useState } from "react";
 import HeroImage from "@/assets/hero-image.webp";
+import HeroImageResponsif from "@/assets/hero-image-responsif.webp";
 import SambutMasaDepan from "@/assets/sambut-masa-depan.webp";
 import AotuoLogo from "@/assets/logo-aotuo.png";
 import RosaLED from "@/assets/ROSA21-Lampu-LED.webp";
@@ -89,7 +90,7 @@ const Home = () => {
           width={500}
           height={500}
           alt="hero image"
-          src={HeroImage}
+          src={isLargerThan768 ? HeroImage : HeroImageResponsif}
           style={{
             width: "100%",
             height: "100%",
