@@ -14,20 +14,24 @@ export function useIntersectionObserver(
   }: Args
 ): IntersectionObserverEntry | undefined {
   const [entry, setEntry] = useState<IntersectionObserverEntry>();
+  const [hasIntersection, setHasIntersection] = useState(false);
 
   const frozen = entry?.isIntersecting && freezeOnceVisible;
 
   const updateEntry = ([entry]: IntersectionObserverEntry[]): void => {
     setEntry(entry);
+    if (entry.isIntersecting) {
+      setHasIntersection(entry.isIntersecting);
+    }
   };
 
   useEffect(() => {
     const node = elementRef?.current; // DOM Ref
     const hasIOSupport = !!window.IntersectionObserver;
 
-    if (!hasIOSupport || frozen || !node) return;
+    if (!hasIOSupport || frozen || !node || hasIntersection) return;
 
-    const observerParams = { threshold, root, rootMargin };
+    const observerParams = { threshold, root, rootMargin }; // Tambahkan once ke options
     const observer = new IntersectionObserver(updateEntry, observerParams);
 
     observer.observe(node);
@@ -41,6 +45,7 @@ export function useIntersectionObserver(
     root,
     rootMargin,
     frozen,
+    hasIntersection,
   ]);
 
   return entry;
