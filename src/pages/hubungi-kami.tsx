@@ -44,9 +44,11 @@ const HubungiKami = () => {
       bgSize="cover"
       w="full"
       h={{
-        base: "1100px",
+        base: "90vh",
         sm: "720px",
       }}
+      maxW={1440}
+      mx="auto"
     >
       <Box
         justifyContent="space-between"
@@ -55,17 +57,7 @@ const HubungiKami = () => {
         h="full"
         px={4}
       >
-        <Box
-          borderRadius="32px"
-          maxW={1200}
-          mx="auto"
-          h={{
-            base: "920px",
-            sm: "500px",
-          }}
-          w="full"
-          bg="red.500"
-        >
+        <Box borderRadius="32px" maxW={1200} mx="auto" w="full" bg="red.500">
           <Box
             display="flex"
             flexDirection={{
@@ -81,7 +73,7 @@ const HubungiKami = () => {
               bgSize="cover"
               h={{
                 base: "30%",
-                md: "full",
+                md: "500px",
               }}
               w={{
                 base: "full",
@@ -96,6 +88,10 @@ const HubungiKami = () => {
                 base: "32px",
                 md: 0,
               }}
+              display={{
+                base: "none",
+                md: "block",
+              }}
             />
             <Box
               w={{
@@ -107,7 +103,7 @@ const HubungiKami = () => {
                 base: 4,
               }}
               h={{
-                base: "70%",
+                base: "fit-content",
                 md: "full",
               }}
             >

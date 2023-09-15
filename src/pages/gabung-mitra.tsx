@@ -20,6 +20,7 @@ import {
   WaIcon,
   WaNext,
 } from "@/assets/icons/sosmed";
+import BackgroundHero from "@/assets/gabung-mitra.webp";
 
 const GabungMitra = () => {
   const syarat = [
@@ -77,12 +78,14 @@ const GabungMitra = () => {
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize="cover"
-        backgroundImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694164835/aotuo/IMG_20230824_140646_450_1_uj9ima.png"
+        backgroundImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694748587/aotuo/Background_Gabung_Mitra_vq9tnh.webp"
         height="calc(100vh - 88px)"
         width="full"
         display="flex"
         alignItems="center"
         justifyContent="center"
+        maxW={1440}
+        mx="auto"
       >
         <Stack spacing={4} w="full" maxW={700} alignItems="center">
           <Text
@@ -165,7 +168,16 @@ const GabungMitra = () => {
           </Box>
         </Box>
       </Box>
-      <Box pos="relative" w="full" minH={900} bg="red.500" py={8} px={4}>
+      <Box
+        pos="relative"
+        w="full"
+        minH={900}
+        bg="red.500"
+        py={8}
+        px={4}
+        maxW={1440}
+        mx="auto"
+      >
         <Box
           pos="absolute"
           top={0}
@@ -243,18 +255,11 @@ const GabungMitra = () => {
         bgSize="cover"
         bgPos="center"
         bgRepeat="no-repeat"
+        maxW={1440}
+        mx="auto"
+        w="full"
       >
-        <Box
-          borderRadius="32px"
-          maxW={1200}
-          mx="auto"
-          h={{
-            base: "920px",
-            sm: "500px",
-          }}
-          w="full"
-          bg="red.500"
-        >
+        <Box borderRadius="32px" maxW={1200} mx="auto" w="full" bg="red.500">
           <Box
             display="flex"
             flexDirection={{
@@ -270,7 +275,7 @@ const GabungMitra = () => {
               bgSize="cover"
               h={{
                 base: "30%",
-                md: "full",
+                md: "500px",
               }}
               w={{
                 base: "full",
@@ -284,6 +289,10 @@ const GabungMitra = () => {
               borderTopRightRadius={{
                 base: "32px",
                 md: 0,
+              }}
+              display={{
+                base: "none",
+                md: "block",
               }}
             />
             <Box

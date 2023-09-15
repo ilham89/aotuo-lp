@@ -188,7 +188,7 @@ const Profil = () => {
           </Box>
         </Box>
       </Box>
-      <Box h={450} bg="red.500" pos="relative">
+      <Box h={450} bg="red.500" pos="relative" maxW={1440} w="full" mx="auto">
         <Box
           display="flex"
           alignItems="center"

@@ -50,7 +50,7 @@ const Faq = () => {
     <Box>
       <Box
         w="full"
-        bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694147317/aotuo/IMG_20230824_125924_037-01_1_nvkfkf.png"
+        bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694748757/aotuo/Background_FAQ_ciisfn.webp"
         bgSize="cover"
         bgRepeat="no-repeat"
         bgPos="center"
@@ -58,6 +58,8 @@ const Faq = () => {
         display="flex"
         justifyContent="center"
         alignItems="center"
+        maxW={1440}
+        mx="auto"
       >
         <Text color="white" fontSize="64px" fontWeight="extrabold">
           FAQ
