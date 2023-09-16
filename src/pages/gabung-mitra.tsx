@@ -20,7 +20,6 @@ import {
   WaIcon,
   WaNext,
 } from "@/assets/icons/sosmed";
-import BackgroundHero from "@/assets/gabung-mitra.webp";
 
 const GabungMitra = () => {
   const syarat = [
@@ -172,13 +171,19 @@ const GabungMitra = () => {
         pos="relative"
         w="full"
         minH={900}
-        bg="red.500"
         py={8}
         px={4}
         maxW={1440}
         mx="auto"
+        bgImage={{
+          base: "https://res.cloudinary.com/ds73yosji/image/upload/v1694883266/aotuo/Background_Syarat_Responsif_rc4icd.webp",
+          md: "https://res.cloudinary.com/ds73yosji/image/upload/v1694883126/aotuo/Background_Syarat_y7uppj.webp",
+        }}
+        bgSize="cover"
+        bgPos="center"
+        bgRepeat="no-repeat"
       >
-        <Box
+        {/* <Box
           pos="absolute"
           top={0}
           left={0}
@@ -199,7 +204,7 @@ const GabungMitra = () => {
           w={300}
           h="full"
           zIndex={1}
-        />
+        /> */}
 
         <Stack spacing={6} pos="relative" zIndex={3}>
           <Text

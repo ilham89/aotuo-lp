@@ -55,43 +55,43 @@ const ProdukGuide = () => {
         >
           <Page
             number={1}
-            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694336562/aotuo/page%201.png"
+            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694883553/aotuo/Left_Side_1_bnpumx.webp"
           />
           <Page
             number={2}
-            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694336990/aotuo/page%202.png"
+            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694883609/aotuo/Right_Side_1_ivpqwt.webp"
           />
           <Page
             number={3}
-            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694337057/aotuo/page%203.png"
+            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694883607/aotuo/Left_Side_2_hapesm.webp"
           />
           <Page
             number={4}
-            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694337123/aotuo/page%204.png"
+            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694883610/aotuo/Right_Side_2_abhtf7.webp"
           />
           <Page
             number={5}
-            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694337183/aotuo/page%205.png"
+            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694883609/aotuo/Left_Side_3_epsrdm.webp"
           />
           <Page
             number={6}
-            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694337439/aotuo/page%206.png"
+            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694883610/aotuo/Right_Side_3_yhwfnu.webp"
           />
           <Page
             number={7}
-            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694337501/aotuo/page%207.png"
+            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694883609/aotuo/Left_Side_4_ai5cgn.webp"
           />
           <Page
             number={8}
-            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694337567/aotuo/page%208.png"
+            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694883610/aotuo/Right_Side_4_s6k5yc.webp"
           />
           <Page
             number={9}
-            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694337605/aotuo/page%209.png"
+            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694883609/aotuo/Left_Side_5_rirrzr.webp"
           />
           <Page
             number={10}
-            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694337669/aotuo/page%2010.png"
+            image="https://res.cloudinary.com/ds73yosji/image/upload/v1694883611/aotuo/Right_Side_5_qyu4gd.webp"
           />
         </HTMLFlipBook>
       </div>

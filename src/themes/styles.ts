@@ -10,10 +10,12 @@ export const styles = {
     },
     ".page-odd": {
       width: "100%",
+      // border: "2px solid black",
     },
     ".page-even": {
       background: "white",
       width: "100%",
+      // border: "2px solid black",
     },
     ".slick-prev:before, .slick-next:before": {
       color: "red.500",
