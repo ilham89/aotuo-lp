@@ -63,7 +63,7 @@ const Profil = () => {
               </Box>
             </Stack>
             <Image
-              src="https://res.cloudinary.com/ds73yosji/image/upload/v1694440470/aotuo/Frame_84_1_lvdqqt.png"
+              src="https://res.cloudinary.com/ds73yosji/image/upload/v1694882727/aotuo/Bapak_Profil_Perusahaan_dr4csn.webp"
               alt="profil"
               width={550}
               height={300}

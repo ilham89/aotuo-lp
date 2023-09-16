@@ -30,6 +30,8 @@ import {
 import Image from "next/image";
 import { ReactElement, useState } from "react";
 import Slider, { Settings } from "react-slick";
+import Decoration1 from "@/assets/decoration1.png";
+import Decoration2 from "@/assets/decoration2.png";
 
 const Produk = () => {
   const [currentProduct, setCurrentProduct] = useState(0);
@@ -827,7 +829,7 @@ const Produk = () => {
           </Stack>
         </Stack>
       </Box>
-      <Box h={450} bg="red.500">
+      <Box h={450} bg="red.500" pos="relative" maxW={1440} w="full" mx="auto">
         <Box
           display="flex"
           alignItems="center"
@@ -836,6 +838,7 @@ const Produk = () => {
           maxW={800}
           w="full"
           mx="auto"
+          px={4}
         >
           <Stack spacing={2}>
             <Text
@@ -849,18 +852,49 @@ const Produk = () => {
             <Text
               color="white"
               fontWeight="bold"
-              fontSize={{
-                base: "3xl",
-                md: "5xl",
-              }}
+              fontSize={{ base: "3xl", md: "5xl" }}
               textAlign="center"
             >
               Sambut Masa Depan Dengan Kendaraan Ramah Lingkungan
             </Text>
           </Stack>
         </Box>
+        <Image
+          src={Decoration1}
+          alt="decoration one"
+          width={150}
+          height={400}
+          style={{
+            objectFit: "contain",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            height: "100%",
+          }}
+        />
+        <Image
+          src={Decoration2}
+          alt="decoration two"
+          width={150}
+          height={400}
+          style={{
+            objectFit: "contain",
+            position: "absolute",
+            top: 0,
+            right: 0,
+            height: "100%",
+          }}
+        />
       </Box>
-      <Box minH={450} h="full" py={8}>
+      <Box
+        minH={450}
+        h="full"
+        py={8}
+        bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694882901/aotuo/Background_Hubungi_Kami_Product_kv79vv.webp"
+        bgPos="center"
+        bgSize="cover"
+        bgRepeat="no-repeat"
+      >
         <Box
           display="flex"
           alignItems="center"

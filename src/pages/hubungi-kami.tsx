@@ -38,7 +38,7 @@ const HubungiKami = () => {
   ];
   return (
     <Box
-      bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694100416/aotuo/DSC00216_1_jug2fm.png"
+      bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694882560/aotuo/Background_Hubungi_Kami_p53xdz.webp"
       bgPos="center"
       bgRepeat="no-repeat"
       bgSize="cover"
