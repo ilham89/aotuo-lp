@@ -67,7 +67,7 @@ const HubungiKami = () => {
             h="full"
           >
             <Box
-              bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694101781/aotuo/DSC00145_1_wbxtol.png"
+              bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694948622/aotuo/Tangan_Kunci_Motor_zzje5i.webp"
               bgPos="center"
               bgRepeat="no-repeat"
               bgSize="cover"
