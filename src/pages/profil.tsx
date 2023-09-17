@@ -88,13 +88,14 @@ const Profil = () => {
             }}
           >
             <Image
-              src="https://res.cloudinary.com/ds73yosji/image/upload/v1694360450/aotuo/image_20_gnxqbr.png"
+              src="https://res.cloudinary.com/ds73yosji/image/upload/v1694948443/aotuo/Tentang_Kami_1_hqjsnv.webp"
               alt="profile 1"
               width={450}
               height={450}
               style={{
                 width: isLargerThan768 ? "40%" : "100%",
                 height: isLargerThan768 ? "unset" : 300,
+                objectFit: "contain",
               }}
             />
             <Stack
@@ -176,13 +177,14 @@ const Profil = () => {
               </Text>
             </Stack>
             <Image
-              src="https://res.cloudinary.com/ds73yosji/image/upload/v1694360756/aotuo/heroimage3-resized_1_1_v7ik9o.png"
-              alt="profile 1"
+              src="https://res.cloudinary.com/ds73yosji/image/upload/v1694948443/aotuo/Tentang_Kami_2_eoldjb.webp"
+              alt="profile 2"
               width={450}
               height={450}
               style={{
                 width: isLargerThan768 ? "60%" : "100%",
                 height: isLargerThan768 ? "unset" : 300,
+                objectFit: "contain",
               }}
             />
           </Box>
