@@ -24,6 +24,10 @@ export const styles = {
     ".slick-next": {
       right: "-15px",
     },
+    ".slick-initialized .slick-slide": {
+      display: "flex",
+      justifyContent: "center",
+    },
     "#nprogress": { pointerEvents: "none" },
     "#nprogress .bar": {
       background: "#E41213",
