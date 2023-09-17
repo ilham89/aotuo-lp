@@ -94,6 +94,7 @@ const Header = () => {
   useEffect(() => {
     if (router.pathname) {
       onClose();
+      setSelectedIndex(-1);
     }
   }, [router.pathname]);
 
