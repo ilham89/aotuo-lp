@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import Logo from "@/assets/logo.png";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import {
   ChevronDownIcon,
   ChevronUpIcon,
@@ -35,23 +35,23 @@ const Header = () => {
       submenus: [
         {
           title: "STARLIGHT",
-          to: "/produk",
+          to: "/products/starlight",
         },
         {
           title: "JP25",
-          to: "/produk",
+          to: "/products/jp25",
         },
         {
           title: "ROSA21",
-          to: "/produk",
+          to: "/products/rosa21",
         },
         {
           title: "VISION",
-          to: "/produk",
+          to: "/products/vision",
         },
         {
           title: "VISION PRO",
-          to: "/produk",
+          to: "/products/vision-pro",
         },
       ],
       to: "/produk",
@@ -129,10 +129,9 @@ const Header = () => {
         <Show above="md">
           <HStack spacing={8} h="full">
             {menus.map((menu, index) => (
-              <>
+              <Fragment key={menu.title}>
                 <HStack
                   pos="relative"
-                  key={menu.title}
                   h="full"
                   px={2}
                   spacing={2}
@@ -190,7 +189,7 @@ const Header = () => {
                     </Stack>
                   </Collapse>
                 </HStack>
-              </>
+              </Fragment>
             ))}
             <Button
               colorScheme="red"
@@ -217,9 +216,8 @@ const Header = () => {
           >
             <Stack spacing={5}>
               {menus.map((menu, index) => (
-                <>
+                <Fragment key={menu.title}>
                   <HStack
-                    key={menu.title}
                     spacing={2}
                     cursor="pointer"
                     onClick={() => {
@@ -262,7 +260,7 @@ const Header = () => {
                       ))}
                     </Stack>
                   </Collapse>
-                </>
+                </Fragment>
               ))}
               <Button
                 colorScheme="red"

@@ -4,11 +4,14 @@ import { Page } from "@/types/page";
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppProps } from "next/app";
 
+import "nprogress/nprogress.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import { Lato } from "next/font/google";
+import { useRouter } from "next/router";
+import nProgress from "nprogress";
 
 type Props = AppProps & {
   Component: Page;
@@ -22,6 +25,23 @@ function MyApp({ Component, pageProps }: Props) {
   const getLayout = Component.getLayout || ((page) => page);
 
   const [showing, setShowing] = useState(false);
+
+  const router = useRouter();
+
+  React.useEffect(() => {
+    const handleRouteStart = () => nProgress.start();
+    const handleRouteDone = () => nProgress.done();
+
+    router.events.on("routeChangeStart", handleRouteStart);
+    router.events.on("routeChangeComplete", handleRouteDone);
+    router.events.on("routeChangeError", handleRouteDone);
+
+    return () => {
+      router.events.off("routeChangeStart", handleRouteStart);
+      router.events.off("routeChangeComplete", handleRouteDone);
+      router.events.off("routeChangeError", handleRouteDone);
+    };
+  }, [router.events]);
 
   useEffect(() => {
     setShowing(true);

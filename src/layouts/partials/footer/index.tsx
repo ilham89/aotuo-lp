@@ -47,23 +47,23 @@ const Footer = () => {
       submenus: [
         {
           title: "Starlight",
-          to: "/produk",
+          to: "/products/starlight",
         },
         {
           title: "JP25",
-          to: "/produk",
+          to: "/products/jp25",
         },
         {
           title: "Rosa21",
-          to: "/produk",
+          to: "/products/rosa21",
         },
         {
           title: "Vision",
-          to: "/produk",
+          to: "/products/vision",
         },
         {
           title: "Vision Pro",
-          to: "/produk",
+          to: "/products/vision-pro",
         },
       ],
     },
