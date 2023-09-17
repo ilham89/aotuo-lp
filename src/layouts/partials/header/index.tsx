@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import Logo from "@/assets/logo.png";
 import { useRouter } from "next/router";
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   ChevronDownIcon,
   ChevronUpIcon,
@@ -90,6 +90,12 @@ const Header = () => {
     ref: ref,
     handler: () => onClose(),
   });
+
+  useEffect(() => {
+    if (router.pathname) {
+      onClose();
+    }
+  }, [router.pathname]);
 
   return (
     <Box w="full" ref={ref} pos="sticky" top={0} bg="white" zIndex={99}>
