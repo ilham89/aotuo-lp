@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import { ReactElement } from "react";
-import Mitra from "@/assets/mitra.png";
+import Mitra from "@/assets/mitra.webp";
 import {
   BlackNext,
   IgIcon,
@@ -53,21 +53,25 @@ const GabungMitra = () => {
       to: "+62811545793",
       icon: <WaIcon />,
       next: <WaNext />,
+      link: "https://wa.me/62811545793",
     },
     {
       to: "@aotuo.id",
       icon: <IgIcon />,
       next: <IgNext />,
+      link: "https://www.instagram.com/aotuo.id/",
     },
     {
       to: "0542 8217949",
       icon: <TelpIcon />,
       next: <BlackNext />,
+      link: "tel:05428217949",
     },
     {
       to: "tborneo@indo.net.id",
       icon: <MailIcon />,
       next: <BlackNext />,
+      link: "mailto:motorlistrikaotuo@gmail.com",
     },
   ];
 
@@ -348,7 +352,13 @@ const GabungMitra = () => {
                           justifyContent="space-between"
                         >
                           {sosmed.icon}
-                          {sosmed.next}
+                          <a
+                            href={sosmed.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {sosmed.next}
+                          </a>
                         </Box>
                         <Text color="black" fontSize="xl">
                           {sosmed.to}
