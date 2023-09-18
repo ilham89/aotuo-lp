@@ -44,7 +44,7 @@ const SectionLeft = ({ title, description, image }: SectionLeftProps) => {
             src={image}
             style={{
               width: "100%",
-              objectFit: "cover",
+              objectFit: "contain",
               objectPosition: "bottom",
             }}
           />

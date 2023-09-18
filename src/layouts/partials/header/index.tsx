@@ -14,7 +14,7 @@ import {
 import Image from "next/image";
 import Logo from "@/assets/logo.png";
 import { useRouter } from "next/router";
-import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import {
   ChevronDownIcon,
   ChevronUpIcon,
@@ -117,6 +117,8 @@ const Header = () => {
           onClick={() => router.push("/")}
           style={{
             cursor: "pointer",
+            width: "124px",
+            height: "36px",
           }}
         />
         <Hide above="md">

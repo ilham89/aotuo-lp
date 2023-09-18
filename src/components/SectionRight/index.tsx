@@ -76,6 +76,7 @@ const SectionRight = ({ title, description, image }: SectionRightProps) => {
             src={image}
             style={{
               width: "100%",
+              height: "100%",
               objectFit: "contain",
               objectPosition: "bottom",
             }}

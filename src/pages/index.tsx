@@ -107,14 +107,14 @@ const Home = () => {
         title="Speedometer Digital"
         description="Rasakan sensasi berkendara baru dengan speedometer digital yang
               futuristik di Motor Listrik Aotuo"
-        image="https://res.cloudinary.com/ds73yosji/image/upload/v1694012357/aotuo/Frame_13_1_h7iezv.png"
+        image="https://res.cloudinary.com/ds73yosji/image/upload/v1695018467/aotuo/STARLIGHT_-_Speedometer_v0cvje.webp"
       />
 
       <SectionLeft
         title="Safety Reverse"
         description="Hadir dengan fitur safety reverse yang canggih di Motor Listrik
               Aotuo, memberikan mobilitas tak tertandingi"
-        image="https://res.cloudinary.com/ds73yosji/image/upload/v1694012903/aotuo/Frame_19_1_nbs0kq.png"
+        image="https://res.cloudinary.com/ds73yosji/image/upload/v1695018638/aotuo/JP25_-_Transmisi_gqphux.webp"
       />
 
       <Box py={14} maxW={1200} mx="auto">

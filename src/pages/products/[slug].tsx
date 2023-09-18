@@ -148,27 +148,27 @@ const products = [
     ],
     section_1: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694273026/aotuo/starlight-1.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695017454/aotuo/STARLIGHT_-_Lampu_LED_ewbcdp.webp",
     },
     section_2: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694273479/aotuo/starlight-2.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695018010/aotuo/STARLIGHT_-_Transmisi_m41eyf.webp",
     },
     section_3: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694273668/aotuo/starlight-3.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695017735/aotuo/STARLIGHT_-_Rem_Cakram_ofbna0.webp",
     },
     section_4: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694273754/aotuo/starlight-4.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695017880/aotuo/STARLIGHT_-_USB_pdulij.webp",
     },
     section_5: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694273902/aotuo/starlight-5.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695017948/aotuo/STARLIGHT_Cover_Image_emqklc.webp",
     },
     section_6: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694274079/aotuo/starlight-6.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695017317/aotuo/STARLIGHT_-_Front_Product_ajnwvv.webp",
     },
   },
   {
@@ -284,27 +284,27 @@ const products = [
     ],
     section_1: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694446449/aotuo/jp25-1.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695018864/aotuo/JP25_-_Lampu_LED_rtms06.webp",
     },
     section_2: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694446703/aotuo/jp25-2.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695018638/aotuo/JP25_-_Transmisi_gqphux.webp",
     },
     section_3: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694447049/aotuo/jp25-3.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695019070/aotuo/JP25_-_Rem_Cakram_jo7lg2.webp",
     },
     section_4: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694447542/aotuo/jp25-4.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695019028/aotuo/JP25_-_USB_rulwzb.webp",
     },
     section_5: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694447925/aotuo/JP25-5.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695019029/aotuo/JP25_Cover_Image_qlwris.webp",
     },
     section_6: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694448191/aotuo/jp25-6.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695018860/aotuo/JP25_-_Front_Product_j6ovfx.webp",
     },
   },
   {
@@ -779,6 +779,7 @@ const ProductDetail = () => {
                   }}
                   fetchPriority="high"
                   loading="eager"
+                  priority
                 />
               ))}
             </Slider>
@@ -859,14 +860,21 @@ const ProductDetail = () => {
             title="Port USB"
             description="Dilengkapi charging port USB memudahkan Anda untuk mengisi daya perangkat di mana saja, memenuhi kebutuhan mobilitas modern Anda"
           />
-          <Box
-            h={450}
-            w="full"
-            bgImage={products[indexProduct]?.section_5?.image}
-            bgPos="center"
-            bgSize="cover"
-            bgRepeat="no-repeat"
-          />
+
+          <Box h="full" width="100%" maxW={1440} mx="auto">
+            <Image
+              width={450}
+              height={450}
+              alt="hero image"
+              priority
+              src={products[indexProduct]?.section_5?.image}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+              }}
+            />
+          </Box>
         </>
       )}
       {indexProduct !== -1 && (
@@ -974,7 +982,8 @@ const ProductDetail = () => {
             position: "absolute",
             top: 0,
             left: 0,
-            height: "100%",
+            height: "400px",
+            width: "150px",
           }}
         />
         <Image
@@ -987,7 +996,8 @@ const ProductDetail = () => {
             position: "absolute",
             top: 0,
             right: 0,
-            height: "100%",
+            height: "400px",
+            width: "150px",
           }}
         />
       </Box>
@@ -999,6 +1009,9 @@ const ProductDetail = () => {
         bgPos="center"
         bgSize="cover"
         bgRepeat="no-repeat"
+        w="full"
+        maxW={1440}
+        mx="auto"
       >
         <Box
           display="flex"
