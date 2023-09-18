@@ -59,7 +59,10 @@ function MyApp({ Component, pageProps }: Props) {
           name="description"
           content="PT TRANS BORNEO TOURS ADALAH SEBAGAI PERUSAHAAN AGEN TUNGGAL PEMEGANG MEREK UNTUK MOTOR LISTRIK AOTUO DI INDONESIA"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=2"
+        />
         <link rel="icon" href="/aotuo.svg" />
       </Head>
       <style jsx global>{`
