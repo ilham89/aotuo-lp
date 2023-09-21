@@ -98,11 +98,9 @@ const Header = () => {
   });
 
   useEffect(() => {
-    if (router.pathname) {
-      onClose();
-      setSelectedIndex(-1);
-    }
-  }, [router.pathname]);
+    onClose();
+    setSelectedIndex(-1);
+  }, [router.pathname, router.query]);
 
   return (
     <Box w="full" ref={ref} pos="sticky" top={0} bg="white" zIndex={99}>
