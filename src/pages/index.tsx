@@ -17,6 +17,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 const Home = () => {
   const [reset, setReset] = useState(1);
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+  const [isLargerThan444] = useMediaQuery("(min-width: 444px)");
 
   const ref = useRef<HTMLDivElement | null>(null);
   const entry = useIntersectionObserver(ref, {});
@@ -197,8 +198,8 @@ const Home = () => {
           ref={ref}
         >
           <Image
-            width={isLargerThan768 ? 100 : 60}
-            height={isLargerThan768 ? 100 : 60}
+            width={isLargerThan768 ? 100 : isLargerThan444 ? 60 : 35}
+            height={isLargerThan768 ? 100 : isLargerThan444 ? 60 : 35}
             alt="logo aotuo"
             src={AotuoLogo}
             style={{

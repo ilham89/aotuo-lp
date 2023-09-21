@@ -85,10 +85,16 @@ const Header = () => {
   const { isOpen, onToggle, onClose } = useDisclosure();
 
   const ref = useRef(null);
+  const submenuRef = useRef(null);
 
   useOutsideClick({
     ref: ref,
     handler: () => onClose(),
+  });
+
+  useOutsideClick({
+    ref: submenuRef,
+    handler: () => setSelectedIndex(-1),
   });
 
   useEffect(() => {
@@ -136,13 +142,14 @@ const Header = () => {
           />
         </Hide>
         <Show above="md">
-          <HStack spacing={8} h="full">
+          <HStack spacing={4} h="full" ref={submenuRef}>
             {menus.map((menu, index) => (
               <Fragment key={menu.title}>
                 <HStack
                   pos="relative"
                   h="full"
                   px={2}
+                  minW="100px"
                   spacing={2}
                   cursor="pointer"
                   onClick={() => {
@@ -162,7 +169,9 @@ const Header = () => {
                   }}
                   color="red.500"
                 >
-                  <Text fontWeight="bold">{menu.title}</Text>
+                  <Text fontWeight="bold" w="full" textAlign="center">
+                    {menu.title}
+                  </Text>
                   {!!menu.submenus.length && <ChevronDownIcon fontSize={24} />}
 
                   <Collapse
@@ -173,7 +182,7 @@ const Header = () => {
                       bottom: selectedIndex === 1 ? -190 : -125,
                       zIndex: "10",
                       background: "white",
-                      borderRadius: 16,
+                      borderRadius: 8,
                       boxShadow: "0px 5px 30px 0px #B2B2B229",
                       padding: 16,
                       left: -75,

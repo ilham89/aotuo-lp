@@ -721,7 +721,7 @@ const ProductDetail = () => {
   const [indexProduct, setIndexProduct] = useState(-1);
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
 
-  const colors = ["#000000", "#E41213", "#1227E4"];
+  const colors = ["#000000", "#FFFFFF", "#E41213", "#9F9F9F", "#1227E4"];
 
   const router = useRouter();
   const { slug } = router.query;
@@ -763,7 +763,7 @@ const ProductDetail = () => {
           >
             {products[indexProduct]?.name}
           </Text>
-          <Box maxW={650} w="full" px={6} mx="auto">
+          <Box maxW={650} px={6} w="full" mx="auto">
             <Slider {...settings}>
               {products[indexProduct]?.images?.map((product) => (
                 <Image
@@ -787,9 +787,30 @@ const ProductDetail = () => {
 
           <HStack spacing={4} justifyContent="center">
             {colors.map((color) => (
-              <Box h={8} w={8} borderRadius="full" bg={color} key={color} />
+              <Box
+                h={10}
+                w={10}
+                borderRadius="full"
+                bg="white"
+                border="1px solid #E9E9E9"
+                key={color}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Box
+                  h={8}
+                  w={8}
+                  borderRadius="full"
+                  {...(color === "#FFFFFF" && {
+                    border: "1px solid #DFDFDF",
+                  })}
+                  bg={color}
+                />
+              </Box>
             ))}
           </HStack>
+
           <Box
             display="flex"
             justifyContent="space-between"
@@ -1021,7 +1042,7 @@ const ProductDetail = () => {
           mx="auto"
           minH={450}
           h="full"
-          gap={7}
+          gap={{ base: 0, md: 7 }}
           flexDirection={{
             base: "column",
             md: "row",
