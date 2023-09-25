@@ -448,19 +448,15 @@ const products = [
     images: [
       {
         title: "skew",
-        url: "https://res.cloudinary.com/ds73yosji/image/upload/v1694946902/aotuo/Vision_Pro_-_Look_Skew_d6ux8e.webp",
+        url: "https://res.cloudinary.com/ds73yosji/image/upload/v1695634507/aotuo/Vision_-_Look_Skew_z4pgci.webp",
       },
       {
         title: "left",
-        url: "https://res.cloudinary.com/ds73yosji/image/upload/v1694946902/aotuo/Vision_Pro_-_Look_Left_hkwx2c.webp",
+        url: "https://res.cloudinary.com/ds73yosji/image/upload/v1695634507/aotuo/Vision_-_Look_Left_ozmd6k.webp",
       },
       {
         title: "front",
-        url: "https://res.cloudinary.com/ds73yosji/image/upload/v1694946902/aotuo/Vision_Pro_-_Look_Front_zsbvej.webp",
-      },
-      {
-        title: "behind",
-        url: "https://res.cloudinary.com/ds73yosji/image/upload/v1694946901/aotuo/Vision_Pro_-_Look_Behind_fllu8e.webp",
+        url: "https://res.cloudinary.com/ds73yosji/image/upload/v1695634506/aotuo/Vision_-_Look_Front_gdy8pu.webp",
       },
     ],
     specs: [
@@ -556,27 +552,27 @@ const products = [
     ],
     section_1: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694446533/aotuo/vision-1.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695634951/aotuo/Frame_56_akbrva.webp",
     },
     section_2: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694446842/aotuo/vision-2.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695634974/aotuo/Frame_57_w7rxat.webp",
     },
     section_3: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694447187/aotuo/vision-3.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695634924/aotuo/Frame_55_nfy8kb.webp",
     },
     section_4: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694447655/aotuo/vision-4.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695634891/aotuo/Frame_54_dgbala.webp",
     },
     section_5: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694448032/aotuo/Vision-5.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695634507/aotuo/Vision_Cover_Image_1_f8ahcr.webp",
     },
     section_6: {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694448291/aotuo/vision-6.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695634720/aotuo/Frame_58_1_e0vqbs.png",
     },
   },
   {
