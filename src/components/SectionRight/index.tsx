@@ -39,7 +39,7 @@ const SectionRight = ({ title, description, image }: SectionRightProps) => {
           <motion.div
             initial={{ opacity: 0, x: -50 }} // Animasi awal dari kiri
             animate={{ opacity: 1, x: 0 }} // Animasi selama animasi berlangsung
-            transition={{ duration: 3 }}
+            transition={{ duration: 5 }}
           >
             <Text
               color="red.500"
@@ -63,7 +63,7 @@ const SectionRight = ({ title, description, image }: SectionRightProps) => {
         <motion.div
           initial={{ opacity: 0, x: 50 }} // Animasi awal dari kanan
           animate={{ opacity: 1, x: 0 }} // Animasi selama animasi berlangsung
-          transition={{ duration: 2 }}
+          transition={{ duration: 5 }}
           style={{
             width: "100%",
             height: "100%",

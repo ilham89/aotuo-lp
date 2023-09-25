@@ -20,6 +20,7 @@ import {
   WaIcon,
   WaNext,
 } from "@/assets/icons/sosmed";
+import { motion } from "framer-motion";
 
 const GabungMitra = () => {
   const syarat = [
@@ -90,7 +91,21 @@ const GabungMitra = () => {
         maxW={1440}
         mx="auto"
       >
-        <Stack spacing={4} w="full" maxW={700} alignItems="center">
+        <Stack
+          spacing={4}
+          w="full"
+          maxW={700}
+          alignItems="center"
+          as={motion.div}
+          initial={{ opacity: 0, rotateX: -180 }}
+          animate={{
+            opacity: 1,
+            rotateX: 0,
+            transition: {
+              duration: 4,
+            },
+          }}
+        >
           <Text
             color="white"
             fontSize="5xl"
@@ -118,6 +133,15 @@ const GabungMitra = () => {
               w={{
                 base: "100%",
                 md: "60%",
+              }}
+              as={motion.div}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 5,
+                },
               }}
             >
               <Stack spacing={4}>
@@ -155,6 +179,15 @@ const GabungMitra = () => {
                 base: "100%",
                 md: "35%",
               }}
+              as={motion.div}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 5,
+                },
+              }}
             >
               <Image
                 src={Mitra}
@@ -187,29 +220,6 @@ const GabungMitra = () => {
         bgPos="center"
         bgRepeat="no-repeat"
       >
-        {/* <Box
-          pos="absolute"
-          top={0}
-          left={0}
-          bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694268036/aotuo/patternpad_1_1_gwgwul.png"
-          bgSize="cover"
-          bgRepeat="no-repeat"
-          w={300}
-          h="full"
-          zIndex={1}
-        />
-        <Box
-          pos="absolute"
-          top={0}
-          right={0}
-          bgImage="https://res.cloudinary.com/ds73yosji/image/upload/v1694268135/aotuo/patternpad_1_2_vgxtto.png"
-          bgSize="cover"
-          bgRepeat="no-repeat"
-          w={300}
-          h="full"
-          zIndex={1}
-        /> */}
-
         <Stack spacing={6} pos="relative" zIndex={3}>
           <Text
             color="white"
@@ -231,6 +241,16 @@ const GabungMitra = () => {
                 key={s.title}
                 maxW={800}
                 w="full"
+                as={motion.div}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 3,
+                    delay: i * 0.5,
+                  },
+                }}
               >
                 <HStack spacing={1} alignItems="flex-start">
                   <Text

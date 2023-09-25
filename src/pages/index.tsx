@@ -211,7 +211,7 @@ const Home = () => {
             <motion.div
               initial={{ opacity: 0, y: -50 }} // Animasi awal dari kiri
               animate={{ opacity: 1, y: 0 }} // Animasi selama animasi berlangsung
-              transition={{ duration: 1, ease: "backInOut" }}
+              transition={{ duration: 3, ease: "backInOut" }}
             >
               <Text
                 color="red.500"

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ReactElement } from "react";
 import Decoration1 from "@/assets/decoration1.png";
 import Decoration2 from "@/assets/decoration2.png";
+import { motion } from "framer-motion";
 
 const Profil = () => {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
@@ -14,6 +15,7 @@ const Profil = () => {
       <Box maxW={1200} w="full" mx="auto" display="flex" alignItems="center">
         <Box>
           <Box
+            as={motion.div}
             h={{
               base: "unset",
               md: "calc(100vh - 88px)",
@@ -29,6 +31,17 @@ const Profil = () => {
             }}
             px={4}
             gap={8}
+            initial={{
+              opacity: 0,
+              y: 50,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 4,
+              },
+            }}
           >
             <Stack spacing={4} maxW="500px" w="full">
               <Text
@@ -85,6 +98,19 @@ const Profil = () => {
             mt={{
               base: 10,
               md: 0,
+            }}
+            as={motion.div}
+            initial={{
+              opacity: 0,
+              x: -100, // Start off-screen to the left
+            }}
+            animate={{
+              opacity: 1,
+              x: 0, // Move to the center
+              transition: {
+                duration: 5,
+                type: "spring", // Apply a spring animation for bounce effect
+              },
             }}
           >
             <Image
@@ -145,6 +171,19 @@ const Profil = () => {
               base: "column-reverse",
               md: "row",
             }}
+            as={motion.div}
+            initial={{
+              opacity: 0,
+              x: 300,
+            }}
+            animate={{
+              opacity: 1,
+              x: 50,
+              transition: {
+                duration: 5,
+                type: "spring",
+              },
+            }}
           >
             <Stack
               spacing={4}
@@ -200,6 +239,21 @@ const Profil = () => {
           w="full"
           mx="auto"
           px={4}
+          as={motion.div}
+          initial={{
+            opacity: 0,
+            y: 50,
+            scale: 0.8,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+              duration: 4.5,
+              ease: "easeOut",
+            },
+          }}
         >
           <Stack spacing={2}>
             <Text

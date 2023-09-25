@@ -31,11 +31,11 @@ const SectionLeft = ({ title, description, image }: SectionLeftProps) => {
         <motion.div
           initial={{ opacity: 0, x: -50 }} // Animasi awal dari kiri
           animate={{ opacity: 1, x: 0 }} // Animasi selama animasi berlangsung
-          transition={{ duration: 2 }}
           style={{
             width: "100%",
             height: "100%",
           }}
+          transition={{ duration: 5 }}
         >
           <Image
             width={100}
@@ -64,7 +64,7 @@ const SectionLeft = ({ title, description, image }: SectionLeftProps) => {
           <motion.div
             initial={{ opacity: 0, x: 50 }} // Animasi awal dari kiri
             animate={{ opacity: 1, x: 0 }} // Animasi selama animasi berlangsung
-            transition={{ duration: 3 }}
+            transition={{ duration: 5 }}
           >
             <Text
               color="white"
