@@ -75,7 +75,7 @@ const Home = () => {
     },
     {
       image:
-        "https://res.cloudinary.com/ds73yosji/image/upload/v1694356714/aotuo/Vision_Pro_-_Look_Skew_ndpw3a.png",
+        "https://res.cloudinary.com/ds73yosji/image/upload/v1695634507/aotuo/Vision_-_Look_Skew_z4pgci.webp",
       title: "Vision",
     },
     {

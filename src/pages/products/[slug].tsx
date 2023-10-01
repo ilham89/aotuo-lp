@@ -138,7 +138,7 @@ const products = [
       {
         icon: <ChargingIcon />,
         title: "Pengisian Cepat",
-        value: "2 Jam",
+        value: "4 Jam",
       },
       {
         icon: <CompassIcon />,
@@ -457,6 +457,10 @@ const products = [
       {
         title: "front",
         url: "https://res.cloudinary.com/ds73yosji/image/upload/v1695634506/aotuo/Vision_-_Look_Front_gdy8pu.webp",
+      },
+      {
+        title: "behind",
+        url: "https://res.cloudinary.com/ds73yosji/image/upload/v1696167518/aotuo/IMG_0896_ysmvjw_mj2bbl.webp",
       },
     ],
     specs: [
@@ -805,6 +809,20 @@ const ProductDetail = () => {
                 />
               </Box>
             ))}
+            {products[indexProduct]?.name === "JP25" && (
+              <Box
+                h={10}
+                w={10}
+                borderRadius="full"
+                bg="white"
+                border="1px solid #E9E9E9"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+              >
+                <Box h={8} w={8} borderRadius="full" bg="#37ABFF" />
+              </Box>
+            )}
           </HStack>
 
           <Box
@@ -928,7 +946,7 @@ const ProductDetail = () => {
                 fontWeight="bold"
                 textAlign="center"
               >
-                Spesifikasi Starlight
+                Spesifikasi {products[indexProduct]?.name}
               </Text>
               <Grid
                 templateColumns={{
