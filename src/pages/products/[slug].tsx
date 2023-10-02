@@ -274,7 +274,7 @@ const products = [
       {
         icon: <ChargingIcon />,
         title: "Pengisian Cepat",
-        value: "2 Jam",
+        value: "4 Jam",
       },
       {
         icon: <CompassIcon />,
@@ -410,7 +410,7 @@ const products = [
       {
         icon: <ChargingIcon />,
         title: "Pengisian Cepat",
-        value: "2 Jam",
+        value: "4 Jam",
       },
       {
         icon: <CompassIcon />,
@@ -460,7 +460,7 @@ const products = [
       },
       {
         title: "behind",
-        url: "https://res.cloudinary.com/ds73yosji/image/upload/v1696167518/aotuo/IMG_0896_ysmvjw_mj2bbl.webp",
+        url: "https://res.cloudinary.com/ds73yosji/image/upload/v1696229193/aotuo/Vision_Pro_-_Look_Behind_ubjr3k.webp",
       },
     ],
     specs: [
@@ -546,7 +546,7 @@ const products = [
       {
         icon: <ChargingIcon />,
         title: "Pengisian Cepat",
-        value: "2 Jam",
+        value: "4 Jam",
       },
       {
         icon: <CompassIcon />,
@@ -682,7 +682,7 @@ const products = [
       {
         icon: <ChargingIcon />,
         title: "Pengisian Cepat",
-        value: "2 Jam",
+        value: "4 Jam",
       },
       {
         icon: <CompassIcon />,
