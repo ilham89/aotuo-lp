@@ -53,7 +53,7 @@ const Profil = () => {
                   md: "56px",
                 }}
               >
-                PT. Trans Borneo Tours
+                PT. Trans Borneo Automotive
               </Text>
               <Box
                 display="flex"
@@ -70,8 +70,9 @@ const Profil = () => {
                   <YoutubeIcon />
                 </Box>
                 <Text color="black" fontSize="sm">
-                  Bekerjasama dengan PT. YHINZHONG AOTUO ELECTRIC TECHNOLOGY
-                  dari China membuat terobosan membuat motor listrik AOTUO.
+                  Bekerja sama dengan PT. Yhinzong Aotuo Electric Technology
+                  membuat inovasi sepeda motor ramah lingkungan. Sepeda
+                  motor listrik AOTUO.
                 </Text>
               </Box>
             </Stack>
@@ -138,10 +139,10 @@ const Profil = () => {
                   md: "2xl",
                 }}
               >
-                Seiring dengan kemajuan teknologi maka perkembangan otomotif
-                sangat cepat dan munculah berbagai macam jenis kendaraan yang
-                sangat canggih sehingga banyak menimbulkan polusi yang sangat
-                luar biasa karena gas emisi yang sangat tinggi.
+                Seiring dengan kemajuan teknologi, perkembangan di dunia
+                otomotif sangatlah cepat. Munculah berbagai macam kendaraan
+                canggih bermotor yang menyebabkan polusi karena kandungan gas
+                emisi yang sangat berbahaya bagi alam.{" "}
               </Text>
               <Text
                 color="black"
@@ -199,9 +200,9 @@ const Profil = () => {
                   md: "2xl",
                 }}
               >
-                PT. Trans Borneo Automotive bekerja sama dengan PT. Yhinzhong
-                Aotuo Eelectric Technology dari China membuat terobosan membuat
-                motor listrik AOTUO.
+                PT. Trans Borneo Automotive bekerja sama dengan PT. Yhinzong
+                Aotuo Electric Technology membuat inovasi sepeda motor ramah
+                lingkungan. Sepeda motor listrik AOTUO.
               </Text>
               <Text
                 color="black"

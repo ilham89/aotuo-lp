@@ -20,7 +20,7 @@ const Faq = () => {
       title:
         "Apakah aman jika Aotuo Electric Bikes dicuci layaknya motor konvensional ?",
       answer:
-        "<p><Tentu saja sangat aman. Karena Aotuo Electric Bikes di rancang oleh para ahli otomotif dengan design futuristik yang sudah teruji kualitasnya supaya tahan dalam berbagai medan dan cuaca. Sehingga pengendara Aotuo Electric Bikes dijamin nyaman dan aman./p>",
+        "<p>Tentu saja sangat aman. Karena Aotuo Electric Bikes di rancang oleh para ahli otomotif dengan design futuristik yang sudah teruji kualitasnya supaya tahan dalam berbagai medan dan cuaca. Sehingga pengendara Aotuo Electric Bikes dijamin nyaman dan aman.</p>",
     },
     {
       title: "Apakah Aotuo Electric Bikes dapat melewati genangan air?",

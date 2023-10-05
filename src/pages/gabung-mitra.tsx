@@ -51,10 +51,10 @@ const GabungMitra = () => {
 
   const sosmeds = [
     {
-      to: "+62811545793",
+      to: "+6282133272151",
       icon: <WaIcon />,
       next: <WaNext />,
-      link: "https://wa.me/62811545793",
+      link: "https://wa.me/6282133272151",
     },
     {
       to: "@aotuo.id",
@@ -69,7 +69,7 @@ const GabungMitra = () => {
       link: "tel:05428217949",
     },
     {
-      to: "tborneo@indo.net.id",
+      to: "motorlistrikaotuo@gmail.com",
       icon: <MailIcon />,
       next: <BlackNext />,
       link: "mailto:motorlistrikaotuo@gmail.com",
@@ -164,7 +164,7 @@ const GabungMitra = () => {
                   }}
                   dangerouslySetInnerHTML={{
                     __html:
-                      "<p>PT. TRANS BORNEO TOURS adalah perusahaan agen tunggal pemegang merek untuk motor listrik AOTUO di Indonesia. Syarat menjadi dealer resmi motor listrik aotuo ada beberapa persyaratan yang perlu dipenuhi dealer. AOTUO memiliki tiga jaringan atau layanan kemitraan yaitu:</p><br /><ul><li>H1 merupakan dealer (penjualan) yang berhak menjual sepeda motor listrik aotuo</li><li>H2 (Bengkel AOTUO) yang berhak menerima kartu perawatan berkala dari sepeda motor aotuo yang baru serta menerima servise dari sepeda motor aotuo lama.</li><li>H3 (Sparepart) yang berhak menjual sparepart dari motor listrik aotuo</li></ul><br /><p>Status usaha bisa dirangkap menjadi H1, H2, H3 ini dari main dealer dan kemampuan service juga ketersediaan spare part.</p>",
+                      "<p>PT. TRANS BORNEO AUTOMOTIVE adalah perusahaan agen tunggal pemegang merek untuk motor listrik AOTUO di Indonesia. Syarat menjadi dealer resmi motor listrik aotuo ada beberapa persyaratan yang perlu dipenuhi dealer. AOTUO memiliki tiga jaringan atau layanan kemitraan yaitu:</p><br /><ul><li>H1 merupakan dealer (penjualan) yang berhak menjual sepeda motor listrik aotuo</li><li>H2 (Bengkel AOTUO) yang berhak menerima kartu perawatan berkala dari sepeda motor aotuo yang baru serta menerima servise dari sepeda motor aotuo lama.</li><li>H3 (Sparepart) yang berhak menjual sparepart dari motor listrik aotuo</li></ul><br /><p>Status usaha bisa dirangkap menjadi H1, H2, H3 ini dari main dealer dan kemampuan service juga ketersediaan spare part.</p>",
                   }}
                   sx={{
                     "ol, ul": {

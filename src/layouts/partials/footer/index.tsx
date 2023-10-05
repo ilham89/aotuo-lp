@@ -80,13 +80,13 @@ const Footer = () => {
         },
         {
           icon: <WaWhite />,
-          title: "+62811545793",
-          to: "https://wa.me/62811545793",
+          title: "+6282133272151",
+          to: "https://wa.me/6282133272151",
         },
         {
           icon: <TelpWhite />,
-          title: "62811545793",
-          to: "tel:62811545793",
+          title: "6282133272151",
+          to: "tel:6282133272151",
         },
         {
           icon: <MailWhite />,
@@ -140,7 +140,7 @@ const Footer = () => {
           <Image height={55} width={220} alt="logo-white" src={LogoWhite} />
           <Show above="md">
             <Text color="white">
-              © 2023 PT. Trans Borneo Tours. All rights reserved
+              © 2023 PT. Trans Borneo Automotive. All rights reserved
             </Text>
           </Show>
         </Box>
@@ -211,7 +211,7 @@ const Footer = () => {
         </Grid>
         <Hide above="md">
           <Text color="white">
-            © {new Date().getFullYear()} PT. Trans Borneo Tours. All rights
+            © {new Date().getFullYear()} PT. Trans Borneo Automotive. All rights
             reserved
           </Text>
         </Hide>

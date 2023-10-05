@@ -16,10 +16,10 @@ import { ReactElement } from "react";
 const HubungiKami = () => {
   const sosmeds = [
     {
-      to: "+62811545793",
+      to: "+6282133272151",
       icon: <WaIcon />,
       next: <WaNext />,
-      link: "https://wa.me/62811545793",
+      link: "https://wa.me/6282133272151",
     },
     {
       to: "@aotuo.id",
@@ -34,7 +34,7 @@ const HubungiKami = () => {
       link: "tel:05428217949",
     },
     {
-      to: "tborneo@indo.net.id",
+      to: "motorlistrikaotuo@gmail.com",
       icon: <MailIcon />,
       next: <BlackNext />,
       link: "mailto:motorlistrikaotuo@gmail.com",
