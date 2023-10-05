@@ -153,9 +153,7 @@ const HubungiKami = () => {
                             {sosmed.next}
                           </a>{" "}
                         </Box>
-                        <Text color="black" fontSize="xl">
-                          {sosmed.to}
-                        </Text>
+                        <Text color="black">{sosmed.to}</Text>
                       </Stack>
                     </GridItem>
                   ))}
