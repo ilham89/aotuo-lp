@@ -12,6 +12,7 @@ import Head from "next/head";
 import { Lato } from "next/font/google";
 import { useRouter } from "next/router";
 import nProgress from "nprogress";
+import { DefaultSeo } from "next-seo";
 
 type Props = AppProps & {
   Component: Page;
@@ -54,11 +55,8 @@ function MyApp({ Component, pageProps }: Props) {
   return (
     <React.Fragment>
       <Head>
-        <title>AOTUO</title>
-        <meta
-          name="description"
-          content="PT TRANS BORNEO TOURS ADALAH SEBAGAI PERUSAHAAN AGEN TUNGGAL PEMEGANG MEREK UNTUK MOTOR LISTRIK AOTUO DI INDONESIA"
-        />
+        <title>Aotuo Electric Bikes: Motor Listrik Ramah Lingkungan</title>
+
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=2"
@@ -71,6 +69,17 @@ function MyApp({ Component, pageProps }: Props) {
         }
       `}</style>
 
+      <DefaultSeo
+        title="Aotuo Electric Bikes: Motor Listrik Ramah Lingkungan"
+        description="Temukan motor listrik canggih dan ramah lingkungan di Aotuo Electric Bikes. Dengan teknologi terbaru, kami menawarkan koleksi motor listrik seperti Vision, Vision Pro, dan Starlight. Bergabunglah dengan revolusi lingkungan!"
+        additionalMetaTags={[
+          {
+            name: "keywords",
+            content:
+              "aotuo, electric bikes, motor listrik, ramah lingkungan, environment, rosa21, vision, vision pro, starlight, jp25, motor, lingkungan, canggih, teknologi",
+          },
+        ]}
+      />
       <ChakraProvider theme={AotuoUI}>
         {getLayout(<Component {...pageProps} />)}
       </ChakraProvider>

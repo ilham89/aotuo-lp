@@ -96,6 +96,8 @@ const Home = () => {
             width: "100%",
             height: "100%",
           }}
+          placeholder="blur"
+          priority
         />
       </Box>
       <SectionLeft
